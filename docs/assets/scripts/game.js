@@ -13,7 +13,7 @@ class Game{
 
 
 
-      start(){
+    start(){
         this.player = new Player(375, 500, 250 ,175 ,this.ctx)
         //call the controls function and pass them to the player
         this.controls = new Controls(this.player);
@@ -25,10 +25,30 @@ class Game{
         this.ctx.clearRect (0,0, this.width, this.height)
     }
     
-      update = () =>{ 
-        this.frames ++;
+    update = () =>{ 
+        this.frames++;
         this.clear();
         this.player.draw();
-        this.intervalId = requestAnimationFrame(this.update)
+        this.updateObstacles();
+      }
+
+      updateObstacles() {
+        for (let i = 0; i < this.obstacles.length; i++) {
+          this.obstacles[i].y += 1;
+          this.obstacles[i].draw();
+        }
+    
+        if (this.frames % 180 === 0) {
+          this.obstacles.push(new Obstacle(this.ctx));
+        }
+      }
+
+      checkColision(){
+        const crashed = this.obstacles.some((obstacle) =>{
+          return this.car.crashWith(obstacle)
+        });
+        if(crashed){
+          this.score();
+        }
       }
 }
