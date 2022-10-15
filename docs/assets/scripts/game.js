@@ -8,6 +8,7 @@ class Game{
         this.frames= 0;
         this.width= 1000;
         this.height= 700;
+        this.score= 0;
         this.controls = null;
       }
 
@@ -30,25 +31,41 @@ class Game{
         this.clear();
         this.player.draw();
         this.updateObstacles();
+        this.checkColision();
+        this.score();
       }
 
       updateObstacles() {
         for (let i = 0; i < this.obstacles.length; i++) {
-          this.obstacles[i].y += 1;
+          this.obstacles[i].y += 5;
           this.obstacles[i].draw();
         }
     
-        if (this.frames % 180 === 0) {
+        if (this.frames % 90 === 0) {
           this.obstacles.push(new Obstacle(this.ctx));
         }
       }
 
+      stop(){
+        clearInterval(this.intervalId)
+      }
+
+
+      // NOT WORKING
+      score(){
+        this.ctx.font = '30px monospace'
+        this.ctx.fillStyle = "black"
+        this.ctx.fillText(`Score: `, 300, 200)
+      }
+
+
+    //NOT FINISHED
       checkColision(){
-        const crashed = this.obstacles.some((obstacle) =>{
-          return this.car.crashWith(obstacle)
+        const crash = this.obstacles.some((obstacle) =>{
+          return this.player.touchObs(obstacle)
         });
-        if(crashed){
-          this.score();
+        if(crash){
+          
         }
       }
 }

@@ -28,7 +28,7 @@ class Player{
         return this.x + this.w
    
     }
-    crashWith(obstacle){
+    touchObs(obstacle){
         return !(this.bottom() < obstacle.top() || 
                 this.top() > obstacle.bottom()  ||
                 this.right() < obstacle.left()  ||
