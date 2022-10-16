@@ -4,8 +4,8 @@ class Obstacle{
         this.ctx = ctx;
         this.x = Math.floor(Math.random() * (900-100)) + 100;
         this.y = 0;
-        this.w = 70
-        this.h = 70;
+        this.w = 60
+        this.h = 60;
         this.img = new Image();
     }
     //function to draw the obstacles

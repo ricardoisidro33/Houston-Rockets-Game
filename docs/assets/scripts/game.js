@@ -8,7 +8,7 @@ class Game{
         this.frames= 0;
         this.width= 1000;
         this.height= 700;
-        this.score= 0;
+        this.points= 0;
         this.controls = null;
       }
 
@@ -37,7 +37,7 @@ class Game{
 
       updateObstacles() {
         for (let i = 0; i < this.obstacles.length; i++) {
-          this.obstacles[i].y += 5;
+          this.obstacles[i].y += 4;
           this.obstacles[i].draw();
         }
     
@@ -51,11 +51,11 @@ class Game{
       }
 
 
-      // NOT WORKING
+      // WORKING BUT SCORE IS NOT OK
       score(){
         this.ctx.font = '30px monospace'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`Score: `, 300, 200)
+        this.ctx.fillText(`Score: ${this.points}`, 50, 80)
       }
 
 
@@ -66,6 +66,7 @@ class Game{
         });
         if(crash){
           
+          this.points++;
         }
       }
 }
