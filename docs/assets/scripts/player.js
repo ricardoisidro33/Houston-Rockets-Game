@@ -14,7 +14,7 @@ class Player{
     }
 
     top(){
-        return this.y +30;
+        return this.y ;
     }
 
     bottom(){
@@ -22,10 +22,10 @@ class Player{
     }
 
     left(){
-        return this.x +30
+        return this.x + 100
     }
     right(){
-        return this.x + this.w
+        return (this.x - 100) + this.w
    
     }
     touchObs(obstacle){

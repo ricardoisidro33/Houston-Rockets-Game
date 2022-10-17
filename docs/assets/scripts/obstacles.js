@@ -29,4 +29,5 @@ class Obstacle{
         return this.x + this.w
    
     }
+
 }

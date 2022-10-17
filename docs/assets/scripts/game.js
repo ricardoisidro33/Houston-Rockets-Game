@@ -10,6 +10,7 @@ class Game{
         this.height= 700;
         this.points= 0;
         this.controls = null;
+        this.lifes = 3;
 
       }
 
@@ -34,6 +35,7 @@ class Game{
         this.updateObstacles();
         this.checkColision();
         this.score();
+        this.showLifes();
       }
 
       updateObstacles() {
@@ -52,26 +54,45 @@ class Game{
       }
 
 
-      // WORKING BUT SCORE IS NOT OK
+      // Finished
       score(){
         this.ctx.font = '30px monospace'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`Score: ${this.points}`, 50, 80)
+        this.ctx.fillText(`Score: ${this.points}`, 95, 85)
       }
 
+      showLifes(){
+        this.ctx.font = '30px monospace'
+        this.ctx.fillStyle = "black"
+        this.ctx.fillText(`Lives: ${this.lifes}`, 1000, 85)
+      }
     
-    //NOT FINISHED
+
+
+      stop(){
+        clearInterval(this.intervalId)
+      }
+
+    //FINISHED
     checkColision =()=>{
       const crash = this.obstacles.some((obstacle) =>{
         return this.player.touchObs(obstacle)
       });
       if(crash){
-        
         this.points++;
       }
       for(let i= 0; i <this.obstacles.length; i++){
+
         if(this.player.touchObs(this.obstacles[i])){
           this.obstacles.splice(i,1)
+
+        } else if(this.obstacles[i].y > 620){
+          this.obstacles.splice(i,1)
+          this.lifes -=1;
+          
+          if(this.lifes === 0){
+              this.stop();
+          }
         }
       }
     }

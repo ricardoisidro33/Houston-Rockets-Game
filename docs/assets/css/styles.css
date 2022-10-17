@@ -1,3 +1,9 @@
+body{
+  background-image: url(/docs/assets/images/htmlbackground.jpg);
+  background-repeat: no-repeat;
+    background-size:cover;
+}
+
 #canvas{
     background-image: url(/docs/assets/images/court.jpg);
     background-repeat: no-repeat;
@@ -41,7 +47,7 @@
 	align-content: stretch;
   border: 3px solid black;
   height: 700px;
-  width: 400px;
+  width: 300px;
   margin-right: 100px;
   text-align: center;
   background-image: url(/docs/assets/images/rocketminibackground.jpg);
