@@ -14,7 +14,7 @@ class Player{
     }
 
     top(){
-        return this.y;
+        return this.y +30;
     }
 
     bottom(){
@@ -22,7 +22,7 @@ class Player{
     }
 
     left(){
-        return this.x
+        return this.x +30
     }
     right(){
         return this.x + this.w

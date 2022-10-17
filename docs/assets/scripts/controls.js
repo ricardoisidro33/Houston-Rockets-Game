@@ -10,13 +10,13 @@ class Controls{
                 case 'ArrowLeft':
                     //only moves the player if is in the right space
                     
-                    this.player.x -=15
+                    this.player.x -=15 
                     break;
                     
                 case 'ArrowRight':
                     //only moves the player if is in the right space
                 
-                    this.player.x +=15
+                    this.player.x +=15 
                     break;
                 
             }

@@ -2,10 +2,10 @@ class Obstacle{
     //creating obstacles
     constructor(ctx){
         this.ctx = ctx;
-        this.x = Math.floor(Math.random() * (900-100)) + 100;
+        this.x = Math.floor(Math.random() * (1200-50)) + 50;
         this.y = 0;
-        this.w = 60
-        this.h = 60;
+        this.w = 100
+        this.h = 80;
         this.img = new Image();
     }
     //function to draw the obstacles
