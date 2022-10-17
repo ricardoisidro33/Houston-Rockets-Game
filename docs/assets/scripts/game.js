@@ -50,7 +50,11 @@ class Game{
       }
 
       stop(){
+        this.ctx.clearRect (0,0, this.width, this.height)
         clearInterval(this.intervalId)
+        this.ctx.font = '100px monospace'
+        this.ctx.fillStyle = "black"
+        this.ctx.fillText(`Score: ${this.points}`, 430, 250)
       }
 
 
@@ -68,11 +72,6 @@ class Game{
       }
     
 
-
-      stop(){
-        clearInterval(this.intervalId)
-      }
-
     //FINISHED
     checkColision =()=>{
       const crash = this.obstacles.some((obstacle) =>{
@@ -89,7 +88,6 @@ class Game{
         } else if(this.obstacles[i].y > 620){
           this.obstacles.splice(i,1)
           this.lifes -=1;
-          
           if(this.lifes === 0){
               this.stop();
           }
