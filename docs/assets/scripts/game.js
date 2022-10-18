@@ -72,6 +72,7 @@ class GameCatch{
       this.player.x= 375
       this.player.y= 500 
       this.obstacles.length = 0;
+      document.getElementById('again-button').style.display = "block";
       }
 
 

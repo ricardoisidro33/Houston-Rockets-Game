@@ -7,7 +7,7 @@ window.onload = () =>{
     }
 
     document.getElementById('game1').onclick =() => {
-        document.getElementById('again-button').style.display = "block";
+        
         document.getElementById('game1').style.display = "none";
         document.getElementById('game2').style.display = "none";
         startGame1();
@@ -15,7 +15,7 @@ window.onload = () =>{
 
 
     document.getElementById('game2').onclick =() => {
-        document.getElementById('again-button').style.display = "block";
+        
         document.getElementById('game1').style.display = "none";
         document.getElementById('game2').style.display = "none";
         startGame2();

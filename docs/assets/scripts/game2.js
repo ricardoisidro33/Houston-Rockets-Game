@@ -10,6 +10,7 @@ class GameAvoid{
         this.height= 700;
         this.controls = null;
         this.lifes = 3;
+        this.timer = 0;
       }
 
 
@@ -50,15 +51,16 @@ class GameAvoid{
       stop(){
         this.ctx.clearRect (0,0, this.width, this.height)
         clearInterval(this.intervalId)
-        /* this.ctx.font = '100px monospace'
+        this.ctx.font = '100px Luckiest Guy'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`Score: ${this.points}`, 430, 250) */
+        this.ctx.fillText(`You survived ${this.timer} seconds`, 90, 350) 
         this.frames = 0;
-        this.points= 0;
+        this.timer= 0;
         this.lifes = 3;
         this.player.x= 375
         this.player.y= 500 
         this.obstacles.length = 0;
+        document.getElementById('again-button').style.display = "block";
       }
 
 
@@ -66,8 +68,8 @@ class GameAvoid{
       score(){
         this.ctx.font = '30px Luckiest Guy'
         this.ctx.fillStyle = "black"
-        const score = Math.floor(this.frames/60)
-        this.ctx.fillText(`Score: ${score}`, 95, 87)
+        this.timer = Math.floor(this.frames/60)
+        this.ctx.fillText(`Time: ${this.timer}`, 95, 87)
       }
 
       showLifes(){
