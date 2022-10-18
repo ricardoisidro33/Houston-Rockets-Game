@@ -1,4 +1,4 @@
-class GameCatch{
+class GameAvoid{
     constructor(){
         this.canvas = document.getElementById('canvas')
         this.ctx = canvas.getContext('2d')
@@ -8,10 +8,8 @@ class GameCatch{
         this.frames= 0;
         this.width= 1300;
         this.height= 700;
-        this.points= 0;
         this.controls = null;
         this.lifes = 3;
-
       }
 
 
@@ -40,11 +38,11 @@ class GameCatch{
 
       updateObstacles() {
         for (let i = 0; i < this.obstacles.length; i++) {
-          this.obstacles[i].y += 4;
+          this.obstacles[i].y += 7;
           this.obstacles[i].draw();
         }
     
-        if (this.frames % 90 === 0) {
+        if (this.frames % 15 === 0) {
           this.obstacles.push(new Obstacle(this.ctx));
         }
       }
@@ -52,9 +50,9 @@ class GameCatch{
       stop(){
         this.ctx.clearRect (0,0, this.width, this.height)
         clearInterval(this.intervalId)
-        this.ctx.font = '100px monospace'
+        /* this.ctx.font = '100px monospace'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`Score: ${this.points}`, 430, 250)
+        this.ctx.fillText(`Score: ${this.points}`, 430, 250) */
       }
 
 
@@ -62,7 +60,8 @@ class GameCatch{
       score(){
         this.ctx.font = '30px monospace'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`Score: ${this.points}`, 95, 85)
+        const score = Math.floor(this.frames/60)
+        this.ctx.fillText(`Score: ${score}`, 95, 85)
       }
 
       showLifes(){
@@ -78,20 +77,16 @@ class GameCatch{
         return this.player.touchObs(obstacle)
       });
       if(crash){
-        this.points++;
-      }
-      for(let i= 0; i <this.obstacles.length; i++){
+        for(let i= 0; i <this.obstacles.length; i++){
 
-        if(this.player.touchObs(this.obstacles[i])){
-          this.obstacles.splice(i,1)
-
-        } else if(this.obstacles[i].y > 620){
-          this.obstacles.splice(i,1)
-          this.lifes -=1;
-          if(this.lifes === 0){
-              this.stop();
+            if(this.player.touchObs(this.obstacles[i])){
+              this.obstacles.splice(i,1)
+              this.lifes -=1;
+              if(this.lifes === 0){
+                this.stop();
+            }
           }
-        }
       }
+    }
     }
 }
