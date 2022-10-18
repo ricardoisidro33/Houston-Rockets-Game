@@ -22,7 +22,9 @@ window.onload = () =>{
     }
 
     document.getElementById('again-button').onclick =() => {
-        
+        document.getElementById('again-button').style.display = "none";
+        document.getElementById('game1').style.display = "block";
+        document.getElementById('game2').style.display = "block";
     }
 
     //function to start the game
@@ -38,4 +40,5 @@ window.onload = () =>{
         game.start();
     }    
 
+    
 }

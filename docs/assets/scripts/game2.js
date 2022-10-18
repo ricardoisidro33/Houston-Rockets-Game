@@ -53,21 +53,27 @@ class GameAvoid{
         /* this.ctx.font = '100px monospace'
         this.ctx.fillStyle = "black"
         this.ctx.fillText(`Score: ${this.points}`, 430, 250) */
+        this.frames = 0;
+        this.points= 0;
+        this.lifes = 3;
+        this.player.x= 375
+        this.player.y= 500 
+        this.obstacles.length = 0;
       }
 
 
       // Finished
       score(){
-        this.ctx.font = '30px monospace'
+        this.ctx.font = '30px Luckiest Guy'
         this.ctx.fillStyle = "black"
         const score = Math.floor(this.frames/60)
-        this.ctx.fillText(`Score: ${score}`, 95, 85)
+        this.ctx.fillText(`Score: ${score}`, 95, 87)
       }
 
       showLifes(){
-        this.ctx.font = '30px monospace'
+        this.ctx.font = '30px Luckiest Guy'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`Lives: ${this.lifes}`, 1000, 85)
+        this.ctx.fillText(`Lives: ${this.lifes}`, 1000, 87)
       }
     
 

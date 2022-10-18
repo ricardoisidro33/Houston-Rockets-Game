@@ -24,6 +24,17 @@ class GameCatch{
         this.intervalId = setInterval(this.update, 1000/60)
     }
 
+    resetGame(){
+      clearInterval(this.intervalId)
+      this.frames = 0;
+      this.clear();
+      this.points= 0;
+      this.lifes = 3;
+      this.player.x= 375
+      this.player.y= 500 
+      this.obstacles.length = 0;
+    }
+
     clear(){
         this.ctx.clearRect (0,0, this.width, this.height)
     }
@@ -52,23 +63,29 @@ class GameCatch{
       stop(){
         this.ctx.clearRect (0,0, this.width, this.height)
         clearInterval(this.intervalId)
-        this.ctx.font = '100px monospace'
+        this.ctx.font = '100px Luckiest Guy'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`Score: ${this.points}`, 430, 250)
+        this.ctx.fillText(`Score: ${this.points}`, 450, 250)
+      this.frames = 0;
+      this.points= 0;
+      this.lifes = 3;
+      this.player.x= 375
+      this.player.y= 500 
+      this.obstacles.length = 0;
       }
 
 
       // Finished
       score(){
-        this.ctx.font = '30px monospace'
+        this.ctx.font = '30px Luckiest Guy'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`Score: ${this.points}`, 95, 85)
+        this.ctx.fillText(`Score: ${this.points}`, 95, 87)
       }
 
       showLifes(){
-        this.ctx.font = '30px monospace'
+        this.ctx.font = '30px luckiest Guy'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`Lives: ${this.lifes}`, 1000, 85)
+        this.ctx.fillText(`Lives: ${this.lifes}`, 1000, 87)
       }
     
 
