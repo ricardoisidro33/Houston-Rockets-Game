@@ -43,7 +43,7 @@ class GameAvoid{
           this.obstacles[i].draw();
         }
     
-        if (this.frames % 15 === 0) {
+        if (this.frames % 30 === 0) {
           this.obstacles.push(new ObstacleWarriors(this.ctx));
         }
       }
@@ -90,6 +90,8 @@ class GameAvoid{
             if(this.player.touchObs(this.obstacles[i])){
               this.obstacles.splice(i,1)
               this.lifes -=1;
+              let audio2 = new Audio('/docs/assets/sounds/fail.mp3')
+          audio2.play();
               if(this.lifes === 0){
                 this.stop();
             }
