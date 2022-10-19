@@ -52,18 +52,22 @@ class GameCatch{
 
       updateObstacles() {
         for (let i = 0; i < this.obstacles.length; i++) {
-          if(this.points >= 10){
-            this.obstacles[i].y += 6;
+          if(this.points >= 10 && this.points < 25){
+            this.obstacles[i].y += 5;
+          this.obstacles[i].draw();
+          }
+          else if(this.points >= 25){
+            this.obstacles[i].y += 7;
           this.obstacles[i].draw();
           }
           else{
-          this.obstacles[i].y += 4;
+          this.obstacles[i].y += 3;
           this.obstacles[i].draw();
           }
         }
     
         if (this.frames % 90 === 0) {
-          this.obstacles.push(new Obstacle(this.ctx));
+          this.obstacles.push(new ObstacleRockets(this.ctx));
         }
       }
 

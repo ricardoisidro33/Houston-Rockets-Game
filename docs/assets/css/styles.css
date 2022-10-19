@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 body{
-  background-image: url(docs/assets/images/htmlbackground.jpg);
+  background-image: url(./docs/assets/images/htmlbackground.jpg);
   background-repeat: no-repeat;
     background-size:cover;
 }
 
 #canvas{
-    background-image: url(docs/assets/images/court.jpg);
+    background-image: url(./docs/assets/images/court.jpg);
     background-repeat: no-repeat;
     background-size:cover;
   }
@@ -20,7 +20,7 @@ body{
   border: 2px solid black;
   color: black;
   background-color: rgb(229, 255, 0);
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: inset 0 0 0 0 #000000;
   transition: ease-out 0.3s;
   font-size: 2rem;
@@ -53,7 +53,7 @@ body{
     border: 2px solid black;
     color: black;
     background-color: rgb(229, 255, 0);
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: inset 0 0 0 0 #000000;
     transition: ease-out 0.3s;
     font-size: 1.6rem;
@@ -76,7 +76,7 @@ body{
     border: 2px solid black;
     color: black;
     background-color: rgb(229, 255, 0);
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: inset 0 0 0 0 #000000;
     transition: ease-out 0.3s;
     font-size: 1.6rem;
@@ -99,7 +99,7 @@ body{
   border: 2px solid black;
   color: black;
   background-color: rgb(229, 255, 0);
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: inset 0 0 0 0 #000000;
   transition: ease-out 0.3s;
   font-size: 2rem;

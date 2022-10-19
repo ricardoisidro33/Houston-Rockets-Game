@@ -44,7 +44,7 @@ class GameAvoid{
         }
     
         if (this.frames % 15 === 0) {
-          this.obstacles.push(new Obstacle(this.ctx));
+          this.obstacles.push(new ObstacleWarriors(this.ctx));
         }
       }
 
