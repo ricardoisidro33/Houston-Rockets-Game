@@ -32,9 +32,9 @@ class GameAvoid{
         this.clear();
         this.player.draw();
         this.updateObstacles();
-        this.checkColision();
         this.score();
         this.showLifes();
+        this.checkColision();
       }
 
       updateObstacles() {
@@ -54,6 +54,7 @@ class GameAvoid{
         this.ctx.font = '80px Luckiest Guy'
         this.ctx.fillStyle = "black"
         this.ctx.fillText(`You survived ${this.timer} seconds`, 90, 300) 
+        this.ctx.clearRect(0,0,1090,100)
         this.frames = 0;
         this.timer= 0;
         this.lifes = 3;

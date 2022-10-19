@@ -44,10 +44,10 @@ class GameCatch{
         this.clear();
         this.player.draw();
         this.updateObstacles();
-        this.checkColision();
         this.score();
         this.showLifes();
         this.warning();
+        this.checkColision();
       }
 
       updateObstacles() {
@@ -81,6 +81,7 @@ class GameCatch{
         this.ctx.font = '100px Luckiest Guy'
         this.ctx.fillStyle = "black"
         this.ctx.fillText(`Score: ${this.points}`, 350, 250)
+        this.ctx.clearRect(0,0,1090,100)
       this.frames = 0;
       this.points= 0;
       this.lifes = 3;
@@ -93,11 +94,21 @@ class GameCatch{
 
 
       warning(){
-        if(this.points >= 9){
+        if(this.points === 9){
         this.ctx.font = '50px Luckiest Guy'
         this.ctx.fillStyle = "black"
         this.ctx.fillText(`WARNING, ABOUT TO SPEED UP!`, 250, 250)
         }
+        else if(this.points === 24){
+          this.ctx.font = '50px Luckiest Guy'
+          this.ctx.fillStyle = "black"
+          this.ctx.fillText(`GOOD LUCK!`, 410, 250)
+          }
+          else if(this.points === 49){
+            this.ctx.font = '50px Luckiest Guy'
+            this.ctx.fillStyle = "black"
+            this.ctx.fillText(`GOD MODE!!!`, 410, 250)
+            }
       }
 
 
