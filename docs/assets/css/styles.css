@@ -9,7 +9,8 @@ body{
 #canvas{
     background-image: url(../images/court.jpg);
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size:contain;
+    margin-top: 20px;
   }
 
 
@@ -131,7 +132,7 @@ body{
 	justify-content: space-around;
 	align-items: center;
 	align-content: stretch;
-  height: 700px;
+  height: 600px;
   width: 300px;
   margin-right: 50px;
   text-align: center;
@@ -139,10 +140,15 @@ body{
   }
 
   #quote{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .arrows-img {
     width: 180px;
     padding-bottom: 15px;
+  }
+
+  .houstonlogo{
+    width: 270px;
+    height: 265px;
   }

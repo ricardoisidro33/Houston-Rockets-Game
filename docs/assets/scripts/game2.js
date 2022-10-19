@@ -6,8 +6,8 @@ class GameAvoid{
         this.obstacles = [];
         this.intervalId = null;
         this.frames= 0;
-        this.width= 1300;
-        this.height= 700;
+        this.width= 1090;
+        this.height= 600;
         this.controls = null;
         this.lifes = 3;
         this.timer = 0;
@@ -16,7 +16,7 @@ class GameAvoid{
 
 
     start(){
-        this.player = new Player(375, 500, 250 ,175 ,this.ctx)
+        this.player = new Player(375, 400, 250 ,175 ,this.ctx)
         //call the controls function and pass them to the player
         this.controls = new Controls(this.player);
         this.controls.keyboardEvents();
@@ -51,9 +51,9 @@ class GameAvoid{
       stop(){
         this.ctx.clearRect (0,0, this.width, this.height)
         clearInterval(this.intervalId)
-        this.ctx.font = '100px Luckiest Guy'
+        this.ctx.font = '80px Luckiest Guy'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`You survived ${this.timer} seconds`, 90, 350) 
+        this.ctx.fillText(`You survived ${this.timer} seconds`, 90, 300) 
         this.frames = 0;
         this.timer= 0;
         this.lifes = 3;
@@ -69,13 +69,13 @@ class GameAvoid{
         this.ctx.font = '30px Luckiest Guy'
         this.ctx.fillStyle = "black"
         this.timer = Math.floor(this.frames/60)
-        this.ctx.fillText(`Time: ${this.timer}`, 95, 87)
+        this.ctx.fillText(`Time: ${this.timer}`, 95, 80)
       }
 
       showLifes(){
         this.ctx.font = '30px Luckiest Guy'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`Lives: ${this.lifes}`, 1000, 87)
+        this.ctx.fillText(`Lives: ${this.lifes}`, 900, 80)
       }
     
 

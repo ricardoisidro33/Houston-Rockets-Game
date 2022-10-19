@@ -6,8 +6,8 @@ class GameCatch{
         this.obstacles = [];
         this.intervalId = null;
         this.frames= 0;
-        this.width= 1300;
-        this.height= 700;
+        this.width= 1090;
+        this.height= 600;
         this.points= 0;
         this.controls = null;
         this.lifes = 3;
@@ -17,7 +17,7 @@ class GameCatch{
 
 
     start(){
-        this.player = new Player(375, 500, 250 ,175 ,this.ctx)
+        this.player = new Player(375, 400, 250 ,175 ,this.ctx)
         //call the controls function and pass them to the player
         this.controls = new Controls(this.player);
         this.controls.keyboardEvents();
@@ -76,7 +76,7 @@ class GameCatch{
         clearInterval(this.intervalId)
         this.ctx.font = '100px Luckiest Guy'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`Score: ${this.points}`, 450, 250)
+        this.ctx.fillText(`Score: ${this.points}`, 350, 250)
       this.frames = 0;
       this.points= 0;
       this.lifes = 3;
@@ -92,7 +92,7 @@ class GameCatch{
         if(this.points >= 9){
         this.ctx.font = '50px Luckiest Guy'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`WARNING, ABOUT TO SPEED UP!`, 350, 250)
+        this.ctx.fillText(`WARNING, ABOUT TO SPEED UP!`, 250, 250)
         }
       }
 
@@ -101,13 +101,13 @@ class GameCatch{
       score(){
         this.ctx.font = '30px Luckiest Guy'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`Score: ${this.points}`, 95, 87)
+        this.ctx.fillText(`Score: ${this.points}`, 95, 80)
       }
 
       showLifes(){
         this.ctx.font = '30px luckiest Guy'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(`Lives: ${this.lifes}`, 1000, 87)
+        this.ctx.fillText(`Lives: ${this.lifes}`, 900, 80)
       }
     
 
@@ -124,7 +124,7 @@ class GameCatch{
         if(this.player.touchObs(this.obstacles[i])){
           this.obstacles.splice(i,1)
 
-        } else if(this.obstacles[i].y > 620){
+        } else if(this.obstacles[i].y > 550){
           this.obstacles.splice(i,1)
           this.lifes -=1;
           if(this.lifes === 0){

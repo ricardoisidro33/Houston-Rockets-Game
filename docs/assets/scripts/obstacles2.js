@@ -2,7 +2,7 @@ class ObstacleWarriors{
     //creating obstacles
     constructor(ctx){
         this.ctx = ctx;
-        this.x = Math.floor(Math.random() * (1200-50)) + 50;
+        this.x = Math.floor(Math.random() * (990-50)) + 50;
         this.y = 0;
         this.w = 50
         this.h = 50;

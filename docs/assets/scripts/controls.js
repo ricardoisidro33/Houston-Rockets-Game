@@ -15,7 +15,7 @@ class Controls{
                     }
                 case 'ArrowRight':
                     //only moves the player if is in the right space
-                    if(this.player.x + this.player.w <= 1380){
+                    if(this.player.x + this.player.w <= 1170){
                     this.player.x +=30
                     break;
                     }
