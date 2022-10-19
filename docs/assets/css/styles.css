@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 body{
-  background-image: url(/docs/assets/images/htmlbackground.jpg);
+  background-image: url(docs/assets/images/htmlbackground.jpg);
   background-repeat: no-repeat;
     background-size:cover;
 }
 
 #canvas{
-    background-image: url(/docs/assets/images/court.jpg);
+    background-image: url(docs/assets/images/court.jpg);
     background-repeat: no-repeat;
     background-size:cover;
   }
