@@ -47,12 +47,19 @@ class GameCatch{
         this.checkColision();
         this.score();
         this.showLifes();
+        this.warning();
       }
 
       updateObstacles() {
         for (let i = 0; i < this.obstacles.length; i++) {
+          if(this.points >= 10){
+            this.obstacles[i].y += 6;
+          this.obstacles[i].draw();
+          }
+          else{
           this.obstacles[i].y += 4;
           this.obstacles[i].draw();
+          }
         }
     
         if (this.frames % 90 === 0) {
@@ -73,6 +80,16 @@ class GameCatch{
       this.player.y= 500 
       this.obstacles.length = 0;
       document.getElementById('again-button').style.display = "block";
+      }
+
+
+
+      warning(){
+        if(this.points >= 9){
+        this.ctx.font = '50px Luckiest Guy'
+        this.ctx.fillStyle = "black"
+        this.ctx.fillText(`WARNING, ABOUT TO SPEED UP!`, 350, 250)
+        }
       }
 
 

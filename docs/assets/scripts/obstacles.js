@@ -10,7 +10,7 @@ class Obstacle{
     }
     //function to draw the obstacles
     draw(){
-        this.img.src= "/docs/assets/images/rocketslogo.png"
+        this.img.src= "docs/assets/images/rocketslogo.png"
         this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
     }
 

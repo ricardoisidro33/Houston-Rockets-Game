@@ -9,7 +9,7 @@ class Player{
     }
     //draw player
     draw(){
-        this.img.src= "/docs/assets/images/jameshardensprite.png"
+        this.img.src= "docs/assets/images/jameshardensprite.png"
         this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
     }
 
