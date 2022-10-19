@@ -90,7 +90,7 @@ class GameAvoid{
             if(this.player.touchObs(this.obstacles[i])){
               this.obstacles.splice(i,1)
               this.lifes -=1;
-              let audio2 = new Audio('/docs/assets/sounds/fail.mp3')
+              let audio2 = new Audio('docs/assets/sounds/fail.mp3')
           audio2.play();
               if(this.lifes === 0){
                 this.stop();
