@@ -121,7 +121,7 @@ class GameCatch{
         return this.player.touchObs(obstacle)
       });
       if(crash){
-        let audio1 = new Audio('/docs/assets/sounds/swish.mp3')
+        let audio1 = new Audio('docs/assets/sounds/swish.mp3')
         audio1.play();
         this.points++;
       }
@@ -133,7 +133,7 @@ class GameCatch{
         } else if(this.obstacles[i].y > 550){
           this.obstacles.splice(i,1)
           this.lifes -=1;
-          let audio2 = new Audio('/docs/assets/sounds/fail.mp3')
+          let audio2 = new Audio('docs/assets/sounds/fail.mp3')
           audio2.play();
           if(this.lifes === 0){
               this.stop();
