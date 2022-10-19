@@ -10,7 +10,7 @@ class ObstacleWarriors{
     }
     //function to draw the obstacles
     draw(){
-        this.img.src= "/docs/assets/images/gswlogo.png"
+        this.img.src= "docs/assets/images/gswlogo.png"
         this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
     }
 
